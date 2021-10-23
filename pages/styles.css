@@ -1,0 +1,192 @@
+.clip-bg{
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.loader-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+}
+
+[data-reach-combobox-option][data-selected],
+[data-reach-combobox-option][data-highlighted],
+[data-reach-combobox-option]:hover{
+  background: #ccc;
+  color: black;
+}
+
+
+/* Multirange Slider */
+.multi-range-slider * {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+.multi-range-slider {
+	display: flex;
+	position: relative;
+	border: solid 1px #ddd;
+	border-radius: 4px;
+	padding: 12px 18px;
+	padding-right: 20px;
+	flex-direction: column;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge,*/
+}
+.multi-range-slider .bar {
+	display: flex;
+}
+.multi-range-slider .bar * {
+	transition: all 100ms;
+}
+.multi-range-slider .bar.active * {
+	transition: none;
+}
+.multi-range-slider .bar-left {
+	width: 25%;
+	border-radius: 10px 0px 0px 10px;
+	padding: 4px 0px;
+	/* background-color: ; */
+	border: 1px solid #bbb;
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.multi-range-slider .bar-right {
+	width: 25%;
+	border-radius: 0px 10px 10px 0px;
+	/* background-color: #f0f0f0; */
+	border: 1px solid #bbb;
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.multi-range-slider .bar-inner {
+	/* background-color: lime; */
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	justify-content: space-between;
+	position: relative;
+	justify-content: space-between;
+	border: 1px solid #bbb;
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.multi-range-slider .bar-inner-left {
+	width: 50%;
+}
+.multi-range-slider .bar-inner-right {
+	width: 50%;
+}
+.multi-range-slider .thumb {
+	background-color: red;
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+}
+.multi-range-slider .thumb::before {
+	content: '';
+	background-color: white;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #aaa;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	z-index: 1;
+	margin: -6px -8px;
+	cursor: pointer;
+}
+.multi-range-slider .input-type-range:focus + .thumb::after {
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	width: 11px;
+	height: 11px;
+	z-index: 2;
+	border-radius: 50%;
+	border: dotted 1px black;
+	box-shadow: 0px 0px 5px white, inset 0px 0px 10px black;
+}
+
+.multi-range-slider .thumb > div {
+	position: absolute;
+	bottom: 25px;
+	left: -8px;
+	width: 20px;
+	height: 20px;
+	font-size: 50%;
+	line-height: 21px;
+	text-align: center;
+	background-color: #555;
+	border-radius: 50%;
+	color: white;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+.multi-range-slider .thumb > div:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	bottom: -2px;
+	height: 10px;
+	width: 10px;
+	background: inherit;
+	transform: rotate(45deg);
+	z-index: -1;
+	border-radius: 1px;
+}
+
+.multi-range-slider .thumb:active * {
+	display: block;
+}
+.input-type-range {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.multi-range-slider .ruler {
+	margin: 10px 0px -5px 0px;
+	display: flex;
+	/* display: none; */
+}
+.multi-range-slider .ruler .ruler-rule {
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 5px 0px;
+}
+
+.multi-range-slider .ruler .ruler-rule:last-child {
+	border-right: solid 1px;
+}
+
+.multi-range-slider .label {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px;
+	margin-left: -3px;
+	margin-right: -5px;
+	margin-top: 10px;
+	display: none;
+}
+.multi-range-slider .label-min {
+	font-size: 80%;
+}
+.multi-range-slider .label-max {
+	font-size: 80%;
+}
